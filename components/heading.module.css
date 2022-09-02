@@ -1,0 +1,19 @@
+.heading{
+    width: 90%;
+    max-width: 1215px;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.heading h1 {
+    color: white;
+}
+
+.gear{
+    position: absolute;
+    right: 50px;
+}
