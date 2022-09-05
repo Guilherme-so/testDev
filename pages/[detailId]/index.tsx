@@ -24,7 +24,7 @@ export async function getStaticProps (context){
     const db = client.db()
     const detaisCollection = db.collection('documents');
 
-    const detailData = await detaisCollection.findOne({_id: ObjectId(detailId)})
+    const detailData = await detaisCollection.findOne({_id: new ObjectId(detailId)})
 
     const  data = await detaisCollection.find({}).toArray()
 
@@ -57,7 +57,7 @@ export async function getStaticProps (context){
         const db = client.db("testDev")
         const collection = db.collection('documents');
     
-        const  data = await collection.find({}, {_id: 1}).toArray()
+        const  data = await collection.find({}).toArray()
     
         client.close()
     
