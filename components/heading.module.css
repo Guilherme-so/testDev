@@ -3,17 +3,58 @@
     max-width: 1215px;
     margin:auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
 }
 
 
-.heading h1 {
-    color: white;
+.title{
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .gear{
     position: absolute;
-    right: 50px;
+    right: 28px;
 }
+
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+  
+  .form{
+    position: relative;
+  }
+  
+  
+  .searchInput{
+    width: 550px;
+    height: 55px;
+    border-radius: 40px;
+    border: none;
+    background: #565656;
+    padding-left: 30px;
+    font-size: larger;
+  }
+  
+  .searchButton{
+    background: #565656;
+    border: none;
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    margin: auto;
+  }
+  

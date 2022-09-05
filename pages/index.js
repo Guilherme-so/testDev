@@ -1,38 +1,53 @@
-import Head from 'next/head'
+import Link from 'next/link'
 import Image from 'next/image'
-import { MagnifyingGlass } from 'phosphor-react'
+import { connectToDatabase } from '../lib/mongoConnect'
 
 import styles from '../styles/Home.module.css'
+import Heading from '../components/Heading'
 
-import { data } from '../data'
 
-export default function Home() {
+const Home = ({conhecimento}) => {
+
   return (
-    <div className={styles.container}>
-      
-      <div className={styles.search}>
-    
-      <form className={styles.form}>
-      <input className={styles.searchInput} type={'text'} />
+  <div className={styles.container}>
+      <Heading  data={conhecimento}/>
+    <ul className={styles.main}>
+    {
+      conhecimento.map((item) => {
+        return (
+        <li key={item.id}>
+          <Link href={`/${item.id}`}>
+          <Image src={item.image} width={275.92} height={308} />
+          </Link>
+        </li>
+        )
+      })
+    }
+    </ul>
 
-      <button className={styles.searchButton}>
-        <MagnifyingGlass className={styles.searchEmoji} size={32} />
-      </button>
-  
-      </form>
-  
-      </div>
-
-      <div className={styles.main}>
-
-      {
-        data.map((item) => {
-          return <div key={item.id}>
-            <Image src={item.image} width={275.92} height={308} />
-          </div>
-        })
-      }
-      </div>
     </div>
   )
 }
+
+export async function getStaticProps(){
+
+  const client = await connectToDatabase()
+
+    const db = client.db("testDev")
+    const detaisCollection = db.collection('documents');
+
+    const  data = await detaisCollection.find({}).toArray()
+
+  return {
+    props: {
+      conhecimento: data?.map((item) => ({
+        title: item.title,
+        description: item.description,
+        image: item.image,
+        id: item._id.toString()
+      }))
+    }
+  }
+}
+
+export default Home

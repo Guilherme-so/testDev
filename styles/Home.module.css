@@ -10,37 +10,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  column-gap: 20px;
-  row-gap: 15px;
-  margin-bottom: 5rem;
-}
-
-.search{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  margin-bottom: 40px;
-}
-
-.form{
-  position: relative;
-}
-
-
-.searchInput{
-  width: 550px;
-  height: 55px;
-  border-radius: 40px;
-  border: none;
-  background: #565656;
-}
-
-.searchButton{
-  background: #565656;
-  border: none;
-  position: absolute;
-  right: 20px;
-  top: 12px;
-  margin: auto;
+  column-gap: 18px;
+  row-gap: 12px;
+  padding-bottom: 5rem;
 }

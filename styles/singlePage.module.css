@@ -1,0 +1,39 @@
+.container{
+    width: 90%;
+    max-width: 1215px;
+    margin: auto;
+    height: 100vh;
+}
+
+.info{
+    display: flex;
+}
+
+
+.infoAbout{
+    padding: 0 20px;
+}
+
+.infoAbout p {
+    color: #bbb1b1;
+    font-size: larger;
+    line-height: 28px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 5rem;
+}
+
+.buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border: none;
+    font-size: 30px;
+}
