@@ -17,7 +17,7 @@ function DetailPage({detailData,dataSlider}) {
   )
 }
 
-export async function getStaticProps (context){
+export async function getServerSideProps (context){
     const detailId = context.params.detailId
 
     const client = await connectToDatabase()
@@ -50,22 +50,20 @@ export async function getStaticProps (context){
     }
 
 
-    export async function getStaticPaths(){
-        const client = await connectToDatabase()
+    // export async function getStaticPaths(){
+    //     const client = await connectToDatabase()
     
-        const db = client.db("testDev")
-        const collection = db.collection('documents');
+    //     const db = client.db("testDev")
+    //     const ducuments = db.collection('documents');
     
-        const  data = await collection.find({}).toArray()
+    //     const  data = await ducuments.find({}).toArray()
     
-        client.close()
+    //     client.close()
     
-        return {
-            fallback: true,
-            paths: data.map((item)=> ({
-                params: {detailId: item._id.toString()}
-            }))
-        }
-    }
+    //     return {
+    //         fallback: true,
+    //         paths: data.map((item)=> ({params: {detailId: item._id.toString()}}))
+    //     }
+    // }
 
 export default DetailPage
