@@ -44,14 +44,15 @@ export async function getStaticProps(){
     const detaisCollection = db.collection('documents');
 
     const  data = await detaisCollection.find({}).toArray()
-
+    console.log(data);
   return {
     props: {
       conhecimentos: data?.map((item) => ({
         title: item.title,
         description: item.description,
         image: item.image,
-        id: item._id.toString()
+        id: item._id.toString(),
+        idx: item.idx
       }))
     }
   }

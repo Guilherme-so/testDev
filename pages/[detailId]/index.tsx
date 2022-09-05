@@ -36,14 +36,14 @@ export async function getStaticProps (context){
                 title: detailData.title,
                 description: detailData.description,
                 image: detailData.image,
-                idx: detailData.index
+                idx: detailData.idx
              },
              dataSlider: data.map((item) => ({
                 title: item.title,
                 description: item.description,
                 image: item.image,
                 id: item._id.toString(),
-                idx: item.index
+                idx: item.idx
               }))
             }
         }
