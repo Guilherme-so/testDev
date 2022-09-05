@@ -44,7 +44,6 @@ export async function getStaticProps (context){
                 image: item.image,
                 id: item._id.toString(),
                 index: item.index
-
               }))
             }
         }

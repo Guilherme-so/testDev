@@ -3,6 +3,6 @@ export interface ConhecimentoProps {
     title: string
     description: string
     image: string,
-    index: string
+    index: number
   }
   
