@@ -2,7 +2,7 @@
     width: 90%;
     max-width: 1215px;
     margin: auto;
-    height: 100vh;
+    height: max-content;
 }
 
 .info{
@@ -14,10 +14,26 @@
     padding: 0 20px;
 }
 
-.infoAbout p {
-    color: #bbb1b1;
+.headingLight{
+    color: #000000;
+}
+
+
+.headingDark{
+    color: #ffffff;
+}
+
+.description{
     font-size: larger;
     line-height: 28px;
+}
+
+.descDark{
+    color: #bbb1b1;
+}
+
+.descLight{
+    color: #000000
 }
 
 .buttons{
@@ -27,13 +43,49 @@
     max-width: 800px;
     margin: auto;
     margin-top: 5rem;
+    padding-bottom: 6rem;
 }
 
 .buttons button {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
     border: none;
     font-size: 30px;
 }
+
+.buttonLight{
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.buttonDark{
+    color: #ffffff;
+    background-color: #000000;
+}
+
+
+@media only screen and (max-width: 950px) {
+    .info{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+    }
+    .info h1 {
+        margin: 10px auto;    
+    }
+
+    .info p {
+        margin: 0;
+    }
+
+    .imageDiv{
+        max-width: 300px;
+        overflow: hidden;    
+    }
+    .buttons button{
+        font-size: 20px;
+    }
+  }

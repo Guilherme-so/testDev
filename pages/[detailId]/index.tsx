@@ -1,6 +1,7 @@
 import React from 'react'
-import { ObjectId } from 'mongodb'
 import { connectToDatabase } from '../../lib/mongoConnect'
+import { ObjectId } from 'mongodb'
+
 import Slider from '../../components/Slider'
 import Heading from '../../components/Heading'
 
@@ -16,7 +17,7 @@ function DetailPage({detailData,dataSlider}) {
   )
 }
 
-export async function getStaticProps(context){
+export async function getStaticProps (context){
     const detailId = context.params.detailId
 
     const client = await connectToDatabase()

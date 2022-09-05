@@ -1,19 +1,26 @@
+import React from 'react'
+import {NextPage} from "next"
 import Link from 'next/link'
 import Image from 'next/image'
 import { connectToDatabase } from '../lib/mongoConnect'
-
+import {ConhecimentoProps} from "../types"
 import styles from '../styles/Home.module.css'
 import Heading from '../components/Heading'
 
 
-const Home = ({conhecimento}) => {
+interface ConhecimentosProps {
+conhecimentos: ConhecimentoProps[]
+}
+
+const Home:NextPage<ConhecimentosProps> = ({conhecimentos}) => {
 
   return (
   <div className={styles.container}>
-      <Heading  data={conhecimento}/>
+      <Heading />
+
     <ul className={styles.main}>
     {
-      conhecimento.map((item) => {
+      conhecimentos.map((item) => {
         return (
         <li key={item.id}>
           <Link href={`/${item.id}`}>
@@ -40,7 +47,7 @@ export async function getStaticProps(){
 
   return {
     props: {
-      conhecimento: data?.map((item) => ({
+      conhecimentos: data?.map((item) => ({
         title: item.title,
         description: item.description,
         image: item.image,

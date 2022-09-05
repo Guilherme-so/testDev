@@ -1,9 +1,10 @@
+import {NextApiRequest, NextApiResponse} from "next"
 import { connectToDatabase } from "../../lib/mongoConnect"
 import { data } from "../../data"
 
 //essa rota e so para jogar os dados no banco de dados 
 
- export default async function Handler(req, res){
+ export default async function Handler(req: NextApiRequest, res: NextApiResponse){
 
 
     // const client = await connectToDatabase()

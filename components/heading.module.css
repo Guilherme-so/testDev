@@ -18,13 +18,25 @@
     margin: auto;
     justify-content: center;
     align-items: center;
+    margin-bottom: 4rem;
 }
 
-.gear{
-    position: absolute;
-    right: 28px;
+.icons{
+  position: absolute;
+  right: 0;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
+.headingDark{
+  color: white;
+}
+
+.headingLight{
+  color: black;  
+}
 
 .search{
     display: flex;
@@ -40,7 +52,7 @@
   
   
   .searchInput{
-    width: 550px;
+    width: 460px;
     height: 55px;
     border-radius: 40px;
     border: none;
@@ -58,3 +70,25 @@
     margin: auto;
   }
   
+
+  @media only screen and (max-width: 800px) {
+    .gear{
+      display: none;
+    }
+    .title {
+      align-items:center ;
+      justify-content: center;
+      margin-top: 25px;
+      margin-bottom: 2rem;
+    }
+    .title h1 {
+      font-size: large;
+    }
+    .searchInput{
+      max-width: 300px;
+      height: 50px;
+    }
+    .icons {
+      top: 10px; 
+    }
+  }
