@@ -6,10 +6,10 @@ import { themeContext } from '../pages/_app'
 import styles from "../styles/singlePage.module.css"
 
 
-function Slider({dataSlider, index}) {
+function Slider({dataSlider, idx}) {
     const {theme} = useContext(themeContext)
-
-    const [current, setCurrent] = useState(index)
+    console.log(idx);
+    const [current, setCurrent] = useState(idx)
     const length = dataSlider.length
 
     const nextSlide = () => {

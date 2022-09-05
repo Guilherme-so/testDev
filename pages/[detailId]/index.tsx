@@ -12,7 +12,7 @@ function DetailPage({detailData,dataSlider}) {
     return (
     <div className={styles.container}>
         <Heading />
-        <Slider dataSlider={dataSlider} index={detailData.index}/>        
+        <Slider dataSlider={dataSlider} idx={detailData.idx}/>        
     </div>
   )
 }
@@ -36,14 +36,14 @@ export async function getStaticProps (context){
                 title: detailData.title,
                 description: detailData.description,
                 image: detailData.image,
-                index: detailData.index
+                idx: detailData.index
              },
              dataSlider: data.map((item) => ({
                 title: item.title,
                 description: item.description,
                 image: item.image,
                 id: item._id.toString(),
-                index: item.index
+                idx: item.index
               }))
             }
         }
