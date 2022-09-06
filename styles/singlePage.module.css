@@ -54,6 +54,10 @@
     font-size: 30px;
 }
 
+.button {
+    cursor: pointer;
+}
+
 .buttonLight{
     color: #000000;
     background-color: #ffffff;
@@ -64,6 +68,9 @@
     background-color: #000000;
 }
 
+.imageDiv {
+    box-shadow: 0 10px 6px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.20);
+}
 
 @media only screen and (max-width: 950px) {
     .info{

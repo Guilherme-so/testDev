@@ -6,6 +6,7 @@ import { themeContext } from '../pages/_app'
 import ReactSwitch from 'react-switch'
 
 import styles from "./heading.module.css"
+import Link from 'next/link'
 
 const  Heading = () => {
   const {theme, toogleTheme} = useContext(themeContext)
@@ -33,10 +34,14 @@ const  Heading = () => {
   }
 
   return (
-    <div className={styles.heading}>
+    <div className={styles.container}>
 
-      <div  className={styles.title}>
-        <h1   className={theme === "dark" ? styles.headingDark : styles.headingLight}>Álbum do conhecimento</h1>
+      <div className={styles.title}>
+        <Link href="/">
+        <h1 className={`${theme === "dark" ? styles.headingDark : styles.headingLight} ${styles.heading}`}>
+          Álbum do conhecimento
+        </h1>
+        </Link>
         <form onSubmit={submitHandler} className={styles.form}>
 
         <input className={styles.searchInput} type={'text'} value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)} placeholder="Pesquise aqui" />

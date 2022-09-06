@@ -24,7 +24,7 @@ const Home:NextPage<ConhecimentosProps> = ({conhecimentos}) => {
         return (
         <li key={item.id}>
           <Link href={`/${item.id}`}>
-          <Image src={item.image} alt={item.title} width={275.92} height={308} />
+          <Image className={styles.img} src={item.image} alt={item.title} width={275.92} height={308} />
           </Link>
         </li>
         )

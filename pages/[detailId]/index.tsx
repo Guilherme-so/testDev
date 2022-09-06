@@ -50,20 +50,4 @@ export async function getServerSideProps (context){
     }
 
 
-    // export async function getStaticPaths(){
-    //     const client = await connectToDatabase()
-    
-    //     const db = client.db("testDev")
-    //     const ducuments = db.collection('documents');
-    
-    //     const  data = await ducuments.find({}).toArray()
-    
-    //     client.close()
-    
-    //     return {
-    //         fallback: true,
-    //         paths: data.map((item)=> ({params: {detailId: item._id.toString()}}))
-    //     }
-    // }
-
 export default DetailPage

@@ -44,11 +44,11 @@ function Slider({dataSlider, idx}) {
 
         <div className={styles.buttons}>
 
-        <button className={theme === "light" ? styles.buttonLight : styles.buttonDark} onClick={prevSlide}>
+        <button className={`${theme === "light" ? styles.buttonLight : styles.buttonDark} ${styles.button}`} onClick={prevSlide}>
             <ArrowLeft className={styles.arrowLeft} size={30}/>  Anterior
         </button>
 
-        <button className={theme === "light" ? styles.buttonLight : styles.buttonDark} onClick={nextSlide}>
+        <button className={`${theme === "light" ? styles.buttonLight : styles.buttonDark} ${styles.button}`} onClick={nextSlide}>
             Próximo <ArrowRight className={styles.arrowRight} size={30}/>
         </button>
         </div>
